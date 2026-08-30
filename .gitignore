@@ -17,6 +17,8 @@ backend/*/__pycache__/
 htmlcov/
 venv/
 .venv/
+**/venv/
+**/.venv/
 env/
 .env
 
