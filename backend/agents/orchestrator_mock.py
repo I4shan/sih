@@ -31,7 +31,7 @@ class InvestigationOrchestrator:
         steps.append(step1)
         
         # 2. Graph Intelligence Agent - Query Graph Structure & Find Paths
-        shortest_path_result = graph_store.find_shortest_path("person_vikram_singhania", "org_dubai_express")
+        shortest_path_result = graph_store.find_shortest_path("person_rajiv_malhotra", "org_dubai_express")
         centrality = calculate_centrality_metrics()
         top_bridges = centrality.get("top_bridge_nodes", [])
         bridge_node_name = top_bridges[0]["label"] if top_bridges else "Rajesh Kumar (Hawala Broker)"
@@ -146,8 +146,8 @@ class InvestigationOrchestrator:
             query=query,
             status="completed",
             steps=steps,
-            key_entities=["person_vikram_singhania", "person_rajesh_hawala", "org_bluestar_trading", "acc_hdfc_singhania", "acc_icici_bluestar"],
-            findings_summary=f"Discovered a high-confidence 3-hop money laundering and communication conduit linking Case {case_id} primary subject (Vikram Singhania) to Network N7 through intermediate bridge entity Rajesh Kumar (BlueStar Import Export). Supported by 5 verified evidence artifacts."
+            key_entities=["person_rajiv_malhotra", "person_rajesh_hawala", "org_bluestar_trading", "acc_hdfc_malhotra", "acc_icici_bluestar"],
+            findings_summary=f"Discovered a high-confidence 3-hop money laundering and communication conduit linking Case {case_id} primary subject (Rajiv Malhotra) to Network N7 through intermediate bridge entity Rajesh Kumar (BlueStar Import Export). Supported by 5 verified evidence artifacts."
         )
         
         return investigation

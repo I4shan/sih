@@ -13,7 +13,8 @@ import {
   Cpu,
   CornerDownRight,
   ShieldAlert,
-  Zap
+  Zap,
+  Shield
 } from 'lucide-react';
 
 export default function AgentActivityFeed() {
@@ -44,22 +45,24 @@ export default function AgentActivityFeed() {
   const steps = activeInvestigation?.steps || [];
 
   return (
-    <div className="flex flex-col h-full glass-panel rounded-2xl border border-slate-800/90 p-5 space-y-5 shadow-2xl">
+    <div className="flex flex-col h-full bg-white rounded-xl border border-sky-200 p-5 space-y-4 shadow-sm">
       {/* Header & Query Launcher */}
-      <div className="space-y-3.5 border-b border-slate-800/80 pb-4">
+      <div className="space-y-3.5 border-b border-slate-200 pb-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-gradient-to-tr from-cyan-950 to-blue-950 text-cyan-400 border border-cyan-700/80 shadow-md shadow-cyan-500/20">
+            <div className="p-2.5 rounded-lg bg-sky-50 text-sky-700 border border-sky-200 shadow-xs">
               <Bot className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-white flex items-center gap-2 tracking-tight">
+              <h2 className="text-base font-bold text-[#003366] flex items-center gap-2 tracking-tight">
                 Autonomous Multi-Agent Investigation Feed
-                <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-cyan-950 text-cyan-400 border border-cyan-800">
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-sky-100 text-sky-900 border border-sky-300">
                   LangGraph Orchestrator
                 </span>
               </h2>
-              <p className="text-xs text-slate-400">Collaborative tool-calling agents with cryptographic reasoning audit logs</p>
+              <p className="text-xs text-slate-600">
+                Cryptographic reasoning audit logs and real-time tool execution traces
+              </p>
             </div>
           </div>
         </div>
@@ -71,13 +74,13 @@ export default function AgentActivityFeed() {
               type="text"
               value={customQuery}
               onChange={(e) => setCustomQuery(e.target.value)}
-              placeholder="Ask an investigation question or hypothesis..."
-              className="flex-1 px-4 py-2.5 bg-slate-950 border border-slate-700/80 rounded-xl text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/30 font-sans"
+              placeholder="Enter investigative hypothesis or query (e.g., 'Find connections to Dubai Network N7')..."
+              className="flex-1 px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-sky-600 focus:ring-2 focus:ring-sky-100"
             />
             <button
               onClick={handleLaunch}
               disabled={isAgentRunning}
-              className="px-5 py-2.5 bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs rounded-xl flex items-center gap-2 transition shadow-lg shadow-cyan-900/40 ring-1 ring-cyan-400/40 disabled:opacity-50 whitespace-nowrap"
+              className="px-5 py-2.5 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs rounded-lg flex items-center gap-2 transition shadow-sm disabled:opacity-50 whitespace-nowrap"
             >
               <Sparkles className="w-4 h-4" />
               <span>{isAgentRunning ? 'Investigating...' : 'Dispatch Agents'}</span>
@@ -86,12 +89,12 @@ export default function AgentActivityFeed() {
 
           {/* Quick Query Suggestions */}
           <div className="flex flex-wrap items-center gap-1.5 text-xs">
-            <span className="text-[11px] text-slate-500 font-mono">Suggested:</span>
+            <span className="text-[11px] text-slate-600 font-semibold">Suggested:</span>
             {sampleQueries.map((q, idx) => (
               <button
                 key={idx}
                 onClick={() => setCustomQuery(q)}
-                className="px-2.5 py-1 rounded-lg bg-slate-950/60 hover:bg-slate-800 text-slate-400 hover:text-cyan-300 border border-slate-800 text-[11px] font-mono transition"
+                className="px-2.5 py-1 rounded-md bg-sky-50 hover:bg-sky-100 text-sky-900 border border-sky-200 text-[11px] transition font-medium"
               >
                 {q}
               </button>
@@ -102,11 +105,11 @@ export default function AgentActivityFeed() {
 
       {/* Investigation Summary Synthesis */}
       {activeInvestigation?.findings_summary && (
-        <div className="p-4 rounded-2xl bg-cyan-950/20 border border-cyan-700/60 space-y-1.5 animate-in fade-in shadow-lg shadow-cyan-950/30">
-          <span className="text-xs font-mono font-bold text-cyan-300 flex items-center gap-2">
-            <FileCheck className="w-4 h-4 text-cyan-400" /> Multi-Agent Synthesized Intelligence Finding:
+        <div className="p-4 rounded-xl bg-sky-50 border border-sky-300 space-y-1.5 shadow-xs">
+          <span className="text-xs font-bold text-sky-900 flex items-center gap-2">
+            <FileCheck className="w-4 h-4 text-sky-700" /> Multi-Agent Synthesized Intelligence Finding:
           </span>
-          <p className="text-xs text-slate-200 leading-relaxed font-sans pl-6">
+          <p className="text-xs text-slate-800 leading-relaxed pl-6 font-medium">
             {activeInvestigation.findings_summary}
           </p>
         </div>
@@ -115,9 +118,9 @@ export default function AgentActivityFeed() {
       {/* Steps Timeline Feed */}
       <div className="flex-1 overflow-y-auto space-y-3 pr-1">
         {steps.length === 0 ? (
-          <div className="py-20 text-center text-slate-500 text-xs font-mono space-y-3">
-            <Cpu className="w-10 h-10 mx-auto text-slate-700 animate-pulse" />
-            <p>No active agent execution trace. Dispatch an investigation query above or use the SIH Demo Guide.</p>
+          <div className="py-20 text-center text-slate-500 text-xs space-y-3">
+            <Cpu className="w-10 h-10 mx-auto text-slate-400 animate-pulse" />
+            <p>No active agent execution trace. Dispatch an investigation query above or use the Demo Guide.</p>
           </div>
         ) : (
           steps.map((step) => {
@@ -125,44 +128,44 @@ export default function AgentActivityFeed() {
             return (
               <div 
                 key={step.step_index} 
-                className="rounded-2xl bg-slate-950/80 border border-slate-800/90 overflow-hidden transition hover:border-slate-700"
+                className="rounded-xl bg-white border border-slate-300 overflow-hidden shadow-xs hover:border-sky-400 transition"
               >
                 {/* Step Header */}
                 <div 
                   onClick={() => toggleStep(step.step_index)}
-                  className="p-3.5 sm:p-4 flex items-center justify-between cursor-pointer hover:bg-slate-900/60 transition select-none"
+                  className="p-3.5 sm:p-4 flex items-center justify-between cursor-pointer hover:bg-sky-50/50 transition select-none"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-xl bg-cyan-950 border border-cyan-700 text-cyan-300 flex items-center justify-center text-xs font-bold font-mono shadow-sm">
+                    <div className="w-7 h-7 rounded-lg bg-sky-100 border border-sky-300 text-sky-800 flex items-center justify-center text-xs font-bold font-mono">
                       {step.step_index}
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-slate-100">{step.agent_name}</span>
-                        <span className="text-[10px] font-mono text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800 font-semibold">
+                        <span className="text-xs font-bold text-slate-900">{step.agent_name}</span>
+                        <span className="text-[10px] font-mono text-sky-900 bg-sky-100 px-2 py-0.5 rounded border border-sky-300 font-semibold">
                           {step.action}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-400 line-clamp-1 mt-0.5 font-sans">{step.thought}</p>
+                      <p className="text-xs text-slate-600 line-clamp-1 mt-0.5">{step.thought}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-[10px] text-emerald-400 font-mono font-bold flex items-center gap-1 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">
-                      <CheckCircle2 className="w-3 h-3" /> VERIFIED
+                    <span className="text-[10px] text-emerald-800 font-bold flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300">
+                      <CheckCircle2 className="w-3 h-3 text-emerald-600" /> VERIFIED
                     </span>
-                    {isExpanded ? <ChevronDown className="w-4 h-4 text-slate-400" /> : <ChevronRight className="w-4 h-4 text-slate-400" />}
+                    {isExpanded ? <ChevronDown className="w-4 h-4 text-slate-500" /> : <ChevronRight className="w-4 h-4 text-slate-500" />}
                   </div>
                 </div>
 
                 {/* Step Details */}
                 {isExpanded && (
-                  <div className="p-4 border-t border-slate-800/80 bg-slate-900/50 space-y-3.5 text-xs animate-in fade-in">
+                  <div className="p-4 border-t border-slate-200 bg-slate-50/70 space-y-3 text-xs">
                     {/* Reasoning */}
-                    <div className="space-y-1.5">
-                      <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider">
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-bold text-slate-700 uppercase tracking-wider">
                         Agent Reasoning / Hypothesis:
                       </span>
-                      <p className="text-xs text-slate-200 leading-relaxed font-sans bg-slate-950 p-3 rounded-xl border border-slate-800">
+                      <p className="text-xs text-slate-800 leading-relaxed bg-white p-3 rounded-lg border border-slate-200">
                         {step.thought}
                       </p>
                     </div>
@@ -170,22 +173,22 @@ export default function AgentActivityFeed() {
                     {/* Tool Call Payload */}
                     {step.tool_call && (
                       <div className="space-y-2">
-                        <div className="flex items-center justify-between text-[11px] font-mono text-cyan-400">
+                        <div className="flex items-center justify-between text-[11px] font-mono text-sky-800">
                           <span className="flex items-center gap-1.5 font-bold">
-                            <Terminal className="w-3.5 h-3.5 text-cyan-400" /> Tool Invoked: {step.tool_call.tool_name}()
+                            <Terminal className="w-3.5 h-3.5 text-sky-700" /> Tool Invoked: {step.tool_call.tool_name}()
                           </span>
                           <span className="text-slate-500 font-mono flex items-center gap-1">
                             <Clock className="w-3 h-3" /> {step.tool_call.execution_time_ms} ms
                           </span>
                         </div>
-                        <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800 font-mono text-[11px] space-y-2 overflow-x-auto">
+                        <div className="bg-white p-3 rounded-lg border border-slate-200 font-mono text-[11px] space-y-2 overflow-x-auto text-slate-800">
                           <div>
                             <span className="text-slate-500 block text-[10px] uppercase font-bold">Input Payload:</span>
-                            <pre className="text-cyan-200 mt-1">{JSON.stringify(step.tool_call.tool_input, null, 2)}</pre>
+                            <pre className="text-sky-900 mt-1">{JSON.stringify(step.tool_call.tool_input, null, 2)}</pre>
                           </div>
-                          <div className="pt-2 border-t border-slate-900">
+                          <div className="pt-2 border-t border-slate-100">
                             <span className="text-slate-500 block text-[10px] uppercase font-bold">Execution Output:</span>
-                            <pre className="text-emerald-300 mt-1">{JSON.stringify(step.tool_call.tool_output, null, 2)}</pre>
+                            <pre className="text-emerald-900 mt-1">{JSON.stringify(step.tool_call.tool_output, null, 2)}</pre>
                           </div>
                         </div>
                       </div>

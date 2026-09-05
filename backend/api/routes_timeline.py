@@ -22,7 +22,7 @@ def get_timeline_events(
             "type": "CASE_MILESTONE",
             "timestamp": "2026-01-05T09:00:00Z",
             "description": "FIR #104/2026 registered under IPC 420, 120B regarding Hawala remittances.",
-            "entities": ["person_vikram_singhania", "case_c104"],
+            "entities": ["person_rajiv_malhotra", "case_c104"],
             "severity": "HIGH",
             "evidence_id": "ev_fir_104_03"
         },
@@ -31,8 +31,8 @@ def get_timeline_events(
             "title": "CDR Intercept Burst (Delhi - Chandni Chowk)",
             "type": "COMMUNICATION",
             "timestamp": "2026-01-14T18:22:00Z",
-            "description": "4 encrypted calls (duration: 18 mins) between Vikram Singhania and Rajesh Hawala.",
-            "entities": ["person_vikram_singhania", "person_rajesh_hawala", "phone_singhania", "phone_rajesh"],
+            "description": "4 encrypted calls (duration: 18 mins) between Rajiv Malhotra and Rajesh Hawala.",
+            "entities": ["person_rajiv_malhotra", "person_rajesh_hawala", "phone_malhotra", "phone_rajesh"],
             "severity": "MEDIUM",
             "evidence_id": "ev_cdr_104_01"
         },
@@ -42,7 +42,7 @@ def get_timeline_events(
             "type": "PHYSICAL_SURVEILLANCE",
             "timestamp": "2026-01-14T21:15:00Z",
             "description": "Toyota Fortuner (DL-01-CZ-8899) observed near Kucha Mahajani. Courier Amit Sharma seen receiving bag.",
-            "entities": ["vehicle_suv_singhania", "person_amit_sharma", "loc_chandni_chowk"],
+            "entities": ["vehicle_suv_malhotra", "person_amit_sharma", "loc_chandni_chowk"],
             "severity": "HIGH",
             "evidence_id": "ev_cdr_104_01"
         },
@@ -51,8 +51,8 @@ def get_timeline_events(
             "title": "Domestic Wire Inflow (Layer 1)",
             "type": "FINANCIAL_TRANSACTION",
             "timestamp": "2026-01-15T11:42:00Z",
-            "description": "₹3,20,00,000 transferred from Singhania Infra (HDFC) to BlueStar Import Export (ICICI).",
-            "entities": ["acc_hdfc_singhania", "acc_icici_bluestar", "org_bluestar_trading"],
+            "description": "₹3,20,00,000 transferred from Malhotra Infra (HDFC) to BlueStar Import Export (ICICI).",
+            "entities": ["acc_hdfc_malhotra", "acc_icici_bluestar", "org_bluestar_trading"],
             "severity": "CRITICAL",
             "evidence_id": "ev_bank_104_02"
         },

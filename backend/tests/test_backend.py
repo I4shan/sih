@@ -21,7 +21,7 @@ def test_entities_list():
     data = response.json()
     assert len(data) >= 10
     labels = [n["label"] for n in data]
-    assert "Vikram Singhania" in labels
+    assert "Rajiv Malhotra" in labels
 
 def test_graph_full():
     response = client.get("/api/v1/graph/full")
@@ -33,7 +33,7 @@ def test_graph_full():
     assert len(data["edges"]) >= 10
 
 def test_shortest_path_discovery():
-    response = client.get("/api/v1/graph/path?source=person_vikram_singhania&target=org_dubai_express")
+    response = client.get("/api/v1/graph/path?source=person_rajiv_malhotra&target=org_dubai_express")
     assert response.status_code == 200
     data = response.json()
     assert data["found"] is True

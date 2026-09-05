@@ -9,7 +9,8 @@ import {
   FileText, 
   UploadCloud, 
   Sparkles, 
-  FolderLock
+  FolderLock,
+  Shield
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab }) {
@@ -21,45 +22,60 @@ export default function Navbar({ activeTab, setActiveTab }) {
   } = useInvestigation();
 
   const tabs = [
-    { id: 'graph', label: 'Graph', icon: Network },
-    { id: 'agents', label: 'Agents', icon: Bot },
+    { id: 'graph', label: 'Network Graph', icon: Network },
+    { id: 'agents', label: 'AI Agents', icon: Bot },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
     { id: 'timeline', label: 'Timeline', icon: Clock },
-    { id: 'evidence', label: 'Evidence', icon: ShieldCheck },
+    { id: 'evidence', label: 'Evidence Vault', icon: ShieldCheck },
     { id: 'reports', label: 'Reports', icon: FileText },
   ];
 
   return (
-    <header className="h-14 bg-[#080d1a]/95 border-b border-slate-800/80 backdrop-blur-xl sticky top-0 z-40 flex-shrink-0">
-      <div className="w-full h-full px-4 sm:px-6 flex items-center justify-between gap-4">
+    <header className="bg-white border-b border-slate-300 shadow-sm sticky top-0 z-40 flex-shrink-0">
+      {/* Top Ministry Ribbon */}
+      <div className="bg-[#003b6f] text-white px-4 py-1.5 flex items-center justify-between text-[11px] border-b border-sky-900 font-medium">
+        <div className="flex items-center gap-2">
+          <span className="font-bold tracking-wider uppercase">GOVERNMENT OF INDIA</span>
+          <span className="text-sky-300">|</span>
+          <span className="tracking-wide">Ministry of Home Affairs • Financial Intelligence Unit (FIU-IND)</span>
+        </div>
+        <div className="flex items-center gap-3 text-[11px]">
+          <span className="bg-sky-800/90 text-sky-100 px-2 py-0.5 rounded font-mono text-[10px] font-bold border border-sky-700">
+            SMART INDIA HACKATHON 2026
+          </span>
+          <span className="text-sky-200 hidden sm:inline font-mono">Problem ID: PS26189</span>
+        </div>
+      </div>
+
+      {/* Main Agency Header & Navigation */}
+      <div className="w-full px-3 sm:px-5 py-2 flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-white via-sky-50/40 to-white">
         
-        {/* Left: Brand & Case Pill */}
+        {/* Left: Emblem & Agency Title */}
         <div className="flex items-center gap-3 flex-shrink-0">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-md shadow-cyan-500/20">
-              <Network className="w-4 h-4 text-white" />
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-600 to-[#00427a] flex items-center justify-center text-white shadow-sm border border-sky-700 flex-shrink-0">
+            <Shield className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <h1 className="text-base font-bold text-[#003366] tracking-tight leading-none uppercase">
+                National Financial Intelligence Platform
+              </h1>
             </div>
-            <div className="flex items-center gap-2 whitespace-nowrap">
-              <span className="font-bold text-white text-sm tracking-tight">PS26189</span>
-              <span className="text-slate-500 text-xs">|</span>
-              <span className="text-xs font-medium text-slate-300">Graph Intel</span>
-              <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-cyan-950/80 text-cyan-400 border border-cyan-800/60 hidden sm:inline-block">
-                SIH 2026
-              </span>
-            </div>
+            <p className="text-[11px] font-semibold text-sky-700 leading-tight mt-0.5">
+              Cross-Entity Graph Investigation & Provenance Analytics System
+            </p>
           </div>
 
-          {/* Clean Case Badge */}
-          <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-800 text-xs whitespace-nowrap">
-            <FolderLock className="w-3.5 h-3.5 text-amber-400" />
-            <span className="font-semibold text-slate-200">Case C104</span>
-            <span className="text-slate-500">•</span>
-            <span className="text-[11px] text-slate-400">Operation Hawala</span>
+          {/* Active Case Tag */}
+          <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-sky-100/80 border border-sky-300 text-xs text-sky-950 font-medium ml-2 shadow-xs">
+            <FolderLock className="w-3.5 h-3.5 text-sky-700" />
+            <span className="font-bold">Case C104:</span>
+            <span className="text-sky-800">Operation Hawala Matrix</span>
           </div>
         </div>
 
-        {/* Center: Clean Nav Pills */}
-        <nav className="flex items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-slate-800/90 overflow-x-auto scrollbar-none">
+        {/* Center: Government Navigation Tabs */}
+        <nav className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-300 overflow-x-auto">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -67,35 +83,35 @@ export default function Navbar({ activeTab, setActiveTab }) {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap transition-all duration-150 ${
+                className={`px-3 py-1.5 rounded-md text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap transition-all ${
                   isActive
-                    ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 shadow-xs'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+                    ? 'bg-[#005b99] text-white shadow-sm'
+                    : 'text-slate-700 hover:text-[#005b99] hover:bg-sky-100/70'
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-cyan-400' : 'text-slate-400'}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-sky-700'}`} />
                 <span>{tab.label}</span>
               </button>
             );
           })}
         </nav>
 
-        {/* Right: Clean Action Buttons */}
+        {/* Right: Actions */}
         <div className="flex items-center gap-2 flex-shrink-0">
           <button
             onClick={() => setIsIngestModalOpen(true)}
-            className="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-semibold rounded-lg border border-slate-700/80 flex items-center gap-1.5 transition whitespace-nowrap shadow-xs"
+            className="px-3 py-1.5 bg-white hover:bg-sky-50 text-sky-900 border border-sky-300 hover:border-sky-400 text-xs font-semibold rounded-md flex items-center gap-1.5 transition shadow-xs"
           >
-            <UploadCloud className="w-3.5 h-3.5 text-cyan-400" />
-            <span className="hidden sm:inline">Ingest</span>
+            <UploadCloud className="w-3.5 h-3.5 text-sky-600" />
+            <span className="hidden sm:inline">Ingest Document</span>
           </button>
 
           <button
             onClick={() => setIsDemoGuideOpen(!isDemoGuideOpen)}
-            className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition whitespace-nowrap shadow-sm ${
+            className={`px-3.5 py-1.5 text-xs font-bold rounded-md flex items-center gap-1.5 transition shadow-sm ${
               isDemoGuideOpen
-                ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400 ring-1 ring-cyan-400/30'
-                : 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white shadow-cyan-900/30'
+                ? 'bg-sky-100 text-[#004d80] border border-sky-400 ring-1 ring-sky-300'
+                : 'bg-gradient-to-r from-sky-600 to-[#005b99] hover:from-sky-700 hover:to-[#00427a] text-white'
             }`}
           >
             <Sparkles className="w-3.5 h-3.5" />

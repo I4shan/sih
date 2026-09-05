@@ -20,49 +20,52 @@ function DashboardContent() {
   const { toastMessage, showToast } = useInvestigation();
 
   return (
-    <div className="h-screen w-screen flex flex-col bg-[#070b14] text-slate-100 grid-bg selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden">
-      {/* Top Command Bar */}
+    <div className="h-screen w-screen flex flex-col bg-[#f0f4f8] text-slate-900 selection:bg-sky-500/20 selection:text-sky-900 overflow-hidden font-sans">
+      {/* Indian Flag Tricolor Accent Header Bar */}
+      <div className="tricolor-stripe w-full flex-shrink-0" />
+
+      {/* Top Indian Government Command Bar */}
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* Main Workspace Area */}
-      <main className="flex-1 w-full overflow-y-auto overflow-x-hidden min-h-0 flex flex-col">
+      <main className="flex-1 w-full overflow-y-auto overflow-x-hidden min-h-0 flex flex-col bg-[#f1f5f9]">
         {activeTab === 'graph' && (
-          <div className="flex-1 w-full p-3 sm:p-4 flex flex-col gap-3 min-h-0 overflow-hidden">
+          <div className="flex-1 w-full p-2.5 sm:p-3.5 flex flex-col gap-2.5 min-h-0 overflow-hidden">
             {/* Top Toolbar Ribbon */}
             <GraphControls layoutName={layoutName} setLayoutName={setLayoutName} />
             {/* Graph Canvas Container */}
-            <div className="flex-1 relative min-h-[400px] w-full rounded-2xl overflow-hidden">
+            <div className="flex-1 relative min-h-[400px] w-full rounded-xl border border-sky-200 shadow-sm overflow-hidden bg-white">
               <CytoscapeGraph layoutName={layoutName} />
             </div>
           </div>
         )}
 
         {activeTab === 'agents' && (
-          <div className="flex-1 p-4 sm:p-6 max-w-7xl w-full mx-auto">
+          <div className="flex-1 p-3 sm:p-5 max-w-7xl w-full mx-auto">
             <AgentActivityFeed />
           </div>
         )}
 
         {activeTab === 'analytics' && (
-          <div className="flex-1 p-4 sm:p-6 max-w-7xl w-full mx-auto">
+          <div className="flex-1 p-3 sm:p-5 max-w-7xl w-full mx-auto">
             <AnalyticsPanel />
           </div>
         )}
 
         {activeTab === 'timeline' && (
-          <div className="flex-1 p-4 sm:p-6 max-w-7xl w-full mx-auto">
+          <div className="flex-1 p-3 sm:p-5 max-w-7xl w-full mx-auto">
             <TimelineView />
           </div>
         )}
 
         {activeTab === 'evidence' && (
-          <div className="flex-1 p-4 sm:p-6 max-w-7xl w-full mx-auto">
+          <div className="flex-1 p-3 sm:p-5 max-w-7xl w-full mx-auto">
             <EvidenceLedgerPage />
           </div>
         )}
 
         {activeTab === 'reports' && (
-          <div className="flex-1 p-4 sm:p-6 max-w-7xl w-full mx-auto">
+          <div className="flex-1 p-3 sm:p-5 max-w-7xl w-full mx-auto">
             <ReportViewer />
           </div>
         )}
@@ -77,27 +80,27 @@ function DashboardContent() {
       {/* Ingestion Modal */}
       <DocumentIngestModal />
 
-      {/* SIH Demo Story Guide Floating Controller (Collapsible / Non-blocking) */}
+      {/* SIH Demo Story Guide Floating Controller */}
       <DemoStoryGuide onTabChange={setActiveTab} />
 
       {/* Toast Notification HUD */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 animate-in fade-in slide-in-from-bottom-5 duration-200">
-          <div className={`px-4 py-3 rounded-2xl shadow-2xl border flex items-center gap-3 text-xs font-semibold backdrop-blur-2xl transition-all ${
+          <div className={`px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 text-xs font-semibold backdrop-blur-md transition-all ${
             toastMessage.type === 'error'
-              ? 'bg-red-950/90 text-red-200 border-red-700/80 shadow-red-950/50'
+              ? 'bg-red-50 text-red-900 border-red-300 shadow-red-100'
               : toastMessage.type === 'success'
-              ? 'bg-emerald-950/90 text-emerald-200 border-emerald-700/80 shadow-emerald-950/50'
+              ? 'bg-emerald-50 text-emerald-900 border-emerald-300 shadow-emerald-100'
               : toastMessage.type === 'warning'
-              ? 'bg-amber-950/90 text-amber-200 border-amber-700/80 shadow-amber-950/50'
-              : 'bg-slate-900/95 text-cyan-200 border-cyan-600/80 shadow-cyan-950/50'
+              ? 'bg-amber-50 text-amber-900 border-amber-300 shadow-amber-100'
+              : 'bg-white text-sky-950 border-sky-300 shadow-sky-100'
           }`}>
             {toastMessage.type === 'error' ? (
-              <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
+              <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
             ) : toastMessage.type === 'success' ? (
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
             ) : (
-              <Info className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <Info className="w-4 h-4 text-sky-600 flex-shrink-0" />
             )}
             <span className="leading-snug">{toastMessage.text}</span>
           </div>

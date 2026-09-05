@@ -1,0 +1,285 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> /F2 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources 3 0 R /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3975 >>
+stream
+0.010 0.450 0.750 rg
+40.00 785.00 515.00 24.00 re f
+1.000 1.000 1.000 rg
+BT /F2 9 Tf 48.00 792.00 Td (PS26189: AGENTIC GRAPH INTELLIGENCE PLATFORM - SIH 2026) ET
+0.060 0.090 0.160 rg
+BT /F2 15 Tf 40.00 765.00 Td (Criminal Network Analysis & Provenance Engine) ET
+0.400 0.450 0.550 rg
+BT /F1 9 Tf 40.00 742.00 Td (Official Presenter Briefing, System Architecture & Evaluator Walkthrough Guide) ET
+1 w 40.00 727.00 m 555.00 727.00 l S
+0.940 0.970 1.000 rg
+0.750 0.860 0.990 RG
+40.00 675.00 515.00 42.00 re B
+0.010 0.350 0.700 rg
+BT /F2 9 Tf 52.00 703.00 Td ([30-SECOND OPENING PITCH HOOK]) ET
+0.100 0.200 0.400 rg
+BT /F1 8.5 Tf 52.00 691.00 Td (Judges, criminal networks hide across layered bank wires and shell companies. Our system maps u) ET
+BT /F1 8.5 Tf 52.00 681.00 Td (nstructured records into a verifiable graph with LangGraph multi-agent reasoning and SHA-256 cr) ET
+0.060 0.090 0.160 rg
+BT /F2 12 Tf 40.00 663.00 Td (1. Architecture: How Everything Is Connected) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 643.00 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 643.00 Td (Unified State Hub: InvestigationContext synchronizes Cytoscape canvas, Agent SOC, and Evidence Ledger.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 630.50 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 630.50 Td (Canvas UI Cards: Color-coded cards: Person \(Cyan\), Org \(Purple\), Phone \(Emerald\), Bank \(Amber\), Bridge \(Red\).) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 618.00 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 618.00 Td (Provenance: Every edge has raw evidence with SHA-256 hash verified against immutable audit ledger.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 605.50 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 605.50 Td (Multi-Agent SOC: LangGraph agents visibly query graph, analyze betweenness, and extract documents.) ET
+0.060 0.090 0.160 rg
+BT /F2 12 Tf 40.00 593.00 Td (2. Page-by-Page & Interactive Click Guide) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 573.00 Td (Page 1: Graph Workspace \(/graph\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 556.00 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 556.00 Td (Clicking any Node Card: Opens Entity Profile Drawer with 0-100 risk score, priority drivers, and attributes.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 543.50 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 543.50 Td (Clicking any Edge Line: Opens Evidence Provenance Modal showing the exact wire slip or CDR intercept record.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 531.00 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 531.00 Td (Pathfinder Tool: Select Source \(Vikram\) -> Target \(Dubai Express\) to trace and highlight the 3-hop hawala) ET
+BT /F1 8.5 Tf 56.00 519.00 Td (conduit.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 506.50 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 506.50 Td (Layout Switcher: Instant toggle between Force \(cose\), Hierarchy \(dagre\), Concentric, and Circle.) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 494.00 Td (Entity Profile Drawer \(Slideover\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 477.00 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 477.00 Td (Investigation Priority Score \(0-100\) with risk drivers and direct associate links with 1-click 'Proof' button.) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 464.50 Td (Evidence Provenance & Cryptographic Vault \(Modal\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 447.50 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 447.50 Td (Click 'Verify Cryptographic Hash': System computes SHA-256 digest live against ledger and shows 0 Tampering.) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 435.00 Td (Document Ingestion Hub \(Modal\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 418.00 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 418.00 Td (Paste unstructured FIR or CDR text -> NLP extracts entities and injects them live into the graph without) ET
+BT /F1 8.5 Tf 56.00 406.00 Td (reload.) ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources 3 0 R /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 6948 >>
+stream
+0.060 0.090 0.160 rg
+BT /F2 12 Tf 40.00 801.89 Td (2. Page-by-Page Guide \(Continued\)) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 781.89 Td (Page 2: Multi-Agent SOC \(/agents\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 764.89 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 764.89 Td (Ask natural language queries \(e.g. 'Find connections to Network N7'\) -> Agents visibly execute with timing in) ET
+BT /F1 8.5 Tf 56.00 752.89 Td (ms.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 740.39 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 740.39 Td (Executive Finding Synthesis summarizes discovered laundering conduit.) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 727.89 Td (Page 3: Topological Analytics & Anomalies \(/analytics\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 710.89 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 710.89 Td (Betweenness Centrality: Ranks Rajesh Kumar #1 \(0.842 score\) proving he is the sole bottleneck bridge suspect.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 698.39 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 698.39 Td (Financial Anomalies: Flags circular Hawala smurfing loops and high-velocity transit hubs.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 685.89 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 685.89 Td (Community Clusters: Louvain modularity algorithm separates domestic Case C104 from Dubai Network N7.) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 673.39 Td (Page 4: Chronological Timeline \(/timeline\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 656.39 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 656.39 Td (Correlates burner phone calls occurring 14 minutes prior to Rs. 4.8 Cr wire transfers.) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 643.89 Td (Page 5: Evidence Vault \(/evidence\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 626.89 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 626.89 Td (Blockchain audit ledger explorer showing immutable blocks, SHA-256 hashes, and tamper-evident status.) ET
+0.080 0.250 0.450 rg
+BT /F2 11 Tf 40.00 614.39 Td (Page 6: Intelligence Dossier \(/reports\)) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 597.39 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 597.39 Td (Court-ready dossier with Executive Summary, Conduit maps, Citations Table, and Section 17 Ethical Framework.) ET
+0.010 0.520 0.780 rg
+BT /F2 10.5 Tf 44.00 584.89 Td (-) ET
+0.150 0.200 0.300 rg
+BT /F1 8.5 Tf 56.00 584.89 Td (Action Buttons: 1-click Export to Markdown and Print / Save PDF.) ET
+0.060 0.090 0.160 rg
+BT /F2 12 Tf 40.00 572.39 Td (3. 1-Click SIH Live Demo Sequence \(Cheat Sheet\)) ET
+0.200 0.250 0.350 rg
+BT /F1 8 Tf 40.00 552.39 Td (Use the floating 'SIH Demo Guide' controller in the bottom-left corner to execute this 9-step demo:) ET
+0.920 0.950 0.980 rg
+0.800 0.850 0.900 RG
+40.00 518.39 515.00 20.00 re B
+0.100 0.200 0.350 rg
+BT /F2 8 Tf 46.00 524.39 Td (Step) ET
+BT /F2 8 Tf 85.00 524.39 Td (Demo Action) ET
+BT /F2 8 Tf 215.00 524.39 Td (What Happens in App) ET
+BT /F2 8 Tf 385.00 524.39 Td (What to Say to Judges) ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 490.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 504.39 Td (1) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 504.39 Td (Load Case C104) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 504.39 Td (Loads Case C104 on canvas) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 504.39 Td ("Loading Case C104 for suspect Vikram S") ET
+BT /F1 7.5 Tf 385.00 495.39 Td ("inghania.") ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 462.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 476.39 Td (2) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 476.39 Td (Focus Vikram) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 476.39 Td (Centers Vikram & opens drawer) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 476.39 Td ("Inspecting registered shell firms and ") ET
+BT /F1 7.5 Tf 385.00 467.39 Td ("bank accounts.") ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 434.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 448.39 Td (3) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 448.39 Td (Run Agent) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 448.39 Td (Switches to Agent tab & runs) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 448.39 Td ("Instructing LangGraph agents to find D") ET
+BT /F1 7.5 Tf 385.00 439.39 Td ("ubai links.") ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 406.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 420.39 Td (4) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 420.39 Td (View Feed) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 420.39 Td (Displays reasoning trace) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 420.39 Td ("Agent visibly traverses graph with exe") ET
+BT /F1 7.5 Tf 385.00 411.39 Td ("cution timings.") ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 378.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 392.39 Td (5) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 392.39 Td (Highlight Path) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 392.39 Td (Pulses 3-hop conduit on canvas) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 392.39 Td ("Discovering money conduit: Vikram -> R") ET
+BT /F1 7.5 Tf 385.00 383.39 Td ("ajesh -> Dubai.") ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 350.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 364.39 Td (6) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 364.39 Td (Inspect Vault) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 364.39 Td (Opens SHA-256 Provenance) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 364.39 Td ("Verifying Rs. 4.8 Cr wire hash against") ET
+BT /F1 7.5 Tf 385.00 355.39 Td (" audit ledger.") ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 322.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 336.39 Td (7) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 336.39 Td (View Analytics) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 336.39 Td (Opens Analytics metrics) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 336.39 Td ("Betweenness centrality isolates Rajesh") ET
+BT /F1 7.5 Tf 385.00 327.39 Td (" Kumar \(0.842\).") ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 294.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 308.39 Td (8) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 308.39 Td (View Timeline) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 308.39 Td (Opens Chronological stream) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 308.39 Td ("Correlating burner call minutes before") ET
+BT /F1 7.5 Tf 385.00 299.39 Td (" wire transfer.") ET
+0.980 0.990 1.000 rg
+0.880 0.900 0.940 RG
+40.00 266.39 515.00 26.00 re B
+0.010 0.400 0.700 rg
+BT /F2 8 Tf 46.00 280.39 Td (9) ET
+0.100 0.150 0.250 rg
+BT /F2 7.5 Tf 85.00 280.39 Td (View Dossier) ET
+0.250 0.300 0.400 rg
+BT /F1 7.5 Tf 215.00 280.39 Td (Opens court-ready dossier) ET
+0.150 0.200 0.300 rg
+BT /F1 7.5 Tf 385.00 280.39 Td ("Compiling final intelligence dossier w") ET
+BT /F1 7.5 Tf 385.00 271.39 Td ("ith PDF export.") ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000265 00000 n 
+0000000375 00000 n 
+0000004402 00000 n 
+0000004512 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+11512
+%%EOF

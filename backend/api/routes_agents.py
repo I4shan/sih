@@ -10,7 +10,7 @@ router = APIRouter(prefix="/agent", tags=["Agentic Workflow"])
 class AgentInvestigateRequest(BaseModel):
     case_id: str = "C104"
     query: str = "Find the strongest connections to Network N7 and identify key bridge nodes"
-    focus_entity_id: Optional[str] = "person_vikram_singhania"
+    focus_entity_id: Optional[str] = "person_rajiv_malhotra"
 
 @router.post("/investigate", response_model=Investigation)
 def run_agentic_investigation(payload: AgentInvestigateRequest):

@@ -22,13 +22,13 @@ def seed_synthetic_investigation_data():
     t0 = datetime(2026, 1, 15, 10, 30, 0, tzinfo=timezone.utc)
     
     cdr_title = "Telecom CDR Intercept Log #DL-CDR-2026-981"
-    cdr_content = "24 calls logged between +91 98110 99881 (Singhania) and +91 98200 44332 (Rajesh Hawala) between Jan 10 and Jan 20, 2026, with 14 calls originating near Chandni Chowk cell tower."
+    cdr_content = "24 calls logged between +91 98110 99881 (Malhotra) and +91 98200 44332 (Rajesh Hawala) between Jan 10 and Jan 20, 2026, with 14 calls originating near Chandni Chowk cell tower."
     cdr_ts = t0 - timedelta(days=2)
     ev_cdr = EvidenceRecord(
         id="ev_cdr_104_01",
         title=cdr_title,
         source_type="CDR_LOG",
-        file_name="telecom_intercept_singhania_rajesh.csv",
+        file_name="telecom_intercept_malhotra_rajesh.csv",
         content_snippet=cdr_content,
         source_uri="secure://evidence_vault/2026/cdr/DL-CDR-2026-981.csv",
         timestamp=cdr_ts,
@@ -42,12 +42,12 @@ def seed_synthetic_investigation_data():
     evidence_store[ev_cdr.id] = ev_cdr
 
     bank_title = "FIU-IND Suspicious Transaction Report (STR #STR-2026-4491)"
-    bank_content = "Wire transfer of ₹3,20,00,000 from Singhania Infra (HDFC 501004928192) to BlueStar Trading (ICICI 001205009182) disguised as 'Heavy Machinery Advance', immediately followed by ₹4,80,00,000 outward remittance to RAKBANK Dubai."
+    bank_content = "Wire transfer of ₹3,20,00,000 from Malhotra Infra (HDFC 501004928192) to BlueStar Trading (ICICI 001205009182) disguised as 'Heavy Machinery Advance', immediately followed by ₹4,80,00,000 outward remittance to RAKBANK Dubai."
     ev_bank = EvidenceRecord(
         id="ev_bank_104_02",
         title=bank_title,
         source_type="BANK_STATEMENT",
-        file_name="fiu_str_bluestar_singhania.pdf",
+        file_name="fiu_str_bluestar_malhotra.pdf",
         content_snippet=bank_content,
         source_uri="secure://fiu_secure_gateway/str/2026/STR-2026-4491.pdf",
         timestamp=t0,
@@ -61,7 +61,7 @@ def seed_synthetic_investigation_data():
     evidence_store[ev_bank.id] = ev_bank
 
     fir_title = "Special Cell Crime Branch FIR #104/2026"
-    fir_content = "FIR registered under IPC 420, 120B, and Section 3/4 PMLA against Vikram Singhania and unknown syndicate members for transnational tax evasion, hawala remittances, and fake trade invoicing."
+    fir_content = "FIR registered under IPC 420, 120B, and Section 3/4 PMLA against Rajiv Malhotra and unknown syndicate members for transnational tax evasion, hawala remittances, and fake trade invoicing."
     fir_ts = t0 - timedelta(days=10)
     ev_fir = EvidenceRecord(
         id="ev_fir_104_03",
@@ -75,7 +75,7 @@ def seed_synthetic_investigation_data():
         confidence=0.95,
         verification_status="Verified",
         sha256_hash=generate_evidence_hash("ev_fir_104_03", fir_title, "FIR", fir_content, fir_ts.isoformat()),
-        extracted_entities=["Vikram Singhania", "IPC 420", "IPC 120B", "Section 3/4 PMLA"],
+        extracted_entities=["Rajiv Malhotra", "IPC 420", "IPC 120B", "Section 3/4 PMLA"],
         metadata={"police_station": "Special Cell Lodhi Colony"}
     )
     evidence_store[ev_fir.id] = ev_fir
@@ -122,28 +122,28 @@ def seed_synthetic_investigation_data():
         tags=["Case", "Hawala", "PMLA", "High Priority"]
     ))
 
-    singhania = graph_store.add_node(NodeCreate(
-        id="person_vikram_singhania",
+    malhotra = graph_store.add_node(NodeCreate(
+        id="person_rajiv_malhotra",
         type=NodeType.PERSON,
-        label="Vikram Singhania",
-        properties={"alias": "Singhania Saab", "pan": "ABCPS8819K", "age": 48, "residence": "Vasant Vihar, New Delhi", "profession": "Real Estate Developer"},
+        label="Rajiv Malhotra",
+        properties={"alias": "Malhotra Saab", "pan": "ABCPS8819K", "age": 48, "residence": "Vasant Vihar, New Delhi", "profession": "Real Estate Developer"},
         risk_score=78.5,
         risk_factors=["Primary suspect in FIR-104", "Heavy unexplained cash flow", "Direct ties to overseas remitter"],
         tags=["Suspect", "Real Estate", "Case C104 Lead"]
     ))
 
-    org_singhania = graph_store.add_node(NodeCreate(
-        id="org_singhania_infra",
+    org_malhotra = graph_store.add_node(NodeCreate(
+        id="org_malhotra_infra",
         type=NodeType.ORGANIZATION,
-        label="Singhania Infra Projects Ltd",
+        label="Malhotra Infra Projects Ltd",
         properties={"cin": "L45200DL2015PLC281900", "gstin": "07AAACS8819K1ZX", "hq": "Barakhamba Road, Connaught Place, New Delhi"},
         risk_score=65.0,
         risk_factors=["Originating account for ₹3.2 Cr unbilled transaction"],
         tags=["Corporate", "Case C104"]
     ))
 
-    phone_singhania = graph_store.add_node(NodeCreate(
-        id="phone_singhania",
+    phone_malhotra = graph_store.add_node(NodeCreate(
+        id="phone_malhotra",
         type=NodeType.PHONE,
         label="+91 98110 99881",
         properties={"imei": "864910049281726", "carrier": "Airtel Delhi", "handset": "iPhone 15 Pro (Encrypted Signal App)"},
@@ -153,7 +153,7 @@ def seed_synthetic_investigation_data():
     ))
 
     acc_hdfc = graph_store.add_node(NodeCreate(
-        id="acc_hdfc_singhania",
+        id="acc_hdfc_malhotra",
         type=NodeType.BANK_ACCOUNT,
         label="HDFC Current A/C #501004928192",
         properties={"bank": "HDFC Bank", "branch": "KG Marg, New Delhi", "ifsc": "HDFC0000003", "balance": "₹14,50,000"},
@@ -162,11 +162,11 @@ def seed_synthetic_investigation_data():
         tags=["Financial", "Outflow Hub"]
     ))
 
-    vehicle_singhania = graph_store.add_node(NodeCreate(
-        id="vehicle_suv_singhania",
+    vehicle_malhotra = graph_store.add_node(NodeCreate(
+        id="vehicle_suv_malhotra",
         type=NodeType.VEHICLE,
         label="Toyota Fortuner (DL-01-CZ-8899)",
-        properties={"color": "Black", "chassis_no": "MBJ11FV28990182", "registered_owner": "Singhania Infra Projects Ltd"},
+        properties={"color": "Black", "chassis_no": "MBJ11FV28990182", "registered_owner": "Malhotra Infra Projects Ltd"},
         risk_score=40.0,
         risk_factors=["Spotted at Chandni Chowk cash handover location on Jan 14"],
         tags=["Vehicle", "Surveillance Target"]
@@ -278,7 +278,7 @@ def seed_synthetic_investigation_data():
     # Case connections
     graph_store.add_edge(EdgeCreate(
         id="edge_01",
-        source="person_vikram_singhania",
+        source="person_rajiv_malhotra",
         target="case_c104",
         type=RelationType.INVOLVED_IN,
         label="Named in FIR",
@@ -290,8 +290,8 @@ def seed_synthetic_investigation_data():
 
     graph_store.add_edge(EdgeCreate(
         id="edge_02",
-        source="person_vikram_singhania",
-        target="org_singhania_infra",
+        source="person_rajiv_malhotra",
+        target="org_malhotra_infra",
         type=RelationType.OWNS,
         label="Majority Shareholder (78%)",
         properties={"directorship_start": "2015-04-01"},
@@ -302,8 +302,8 @@ def seed_synthetic_investigation_data():
 
     graph_store.add_edge(EdgeCreate(
         id="edge_03",
-        source="person_vikram_singhania",
-        target="phone_singhania",
+        source="person_rajiv_malhotra",
+        target="phone_malhotra",
         type=RelationType.USES,
         label="Registered Subscriber",
         source_id="ev_cdr_104_01",
@@ -313,8 +313,8 @@ def seed_synthetic_investigation_data():
 
     graph_store.add_edge(EdgeCreate(
         id="edge_04",
-        source="person_vikram_singhania",
-        target="vehicle_suv_singhania",
+        source="person_rajiv_malhotra",
+        target="vehicle_suv_malhotra",
         type=RelationType.OWNS_VEHICLE,
         label="Personal Vehicle",
         confidence=0.90
@@ -322,8 +322,8 @@ def seed_synthetic_investigation_data():
 
     graph_store.add_edge(EdgeCreate(
         id="edge_05",
-        source="org_singhania_infra",
-        target="acc_hdfc_singhania",
+        source="org_malhotra_infra",
+        target="acc_hdfc_malhotra",
         type=RelationType.OWNS,
         label="Corporate Account",
         source_id="ev_bank_104_02",
@@ -331,10 +331,10 @@ def seed_synthetic_investigation_data():
         confidence=1.0
     ))
 
-    # CDR communication link (Singhania <-> Rajesh Hawala)
+    # CDR communication link (Malhotra <-> Rajesh Hawala)
     graph_store.add_edge(EdgeCreate(
         id="edge_06",
-        source="phone_singhania",
+        source="phone_malhotra",
         target="phone_rajesh",
         type=RelationType.COMMUNICATED_WITH,
         label="24 Intercepted Calls",
@@ -405,10 +405,10 @@ def seed_synthetic_investigation_data():
         confidence=0.88
     ))
 
-    # Bank Layering (Singhania HDFC -> BlueStar ICICI -> RAKBANK Dubai)
+    # Bank Layering (Malhotra HDFC -> BlueStar ICICI -> RAKBANK Dubai)
     graph_store.add_edge(EdgeCreate(
         id="edge_13",
-        source="acc_hdfc_singhania",
+        source="acc_hdfc_malhotra",
         target="acc_icici_bluestar",
         type=RelationType.TRANSFERRED_TO,
         label="₹3.20 Cr Wire (Jan 15, 2026)",

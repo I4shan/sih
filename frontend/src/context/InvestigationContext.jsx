@@ -86,14 +86,14 @@ export function InvestigationProvider({ children }) {
       const inv = await api.runAgentInvestigation({
         case_id: activeCase.id,
         query: queryText,
-        focus_entity_id: "person_vikram_singhania"
+        focus_entity_id: "person_rajiv_malhotra"
       });
       setActiveInvestigation(inv);
       showToast("Agent investigation complete. 6 steps executed.", "success");
       
       // Auto highlight discovered path
       try {
-        const pathRes = await api.getShortestPath("person_vikram_singhania", "org_dubai_express");
+        const pathRes = await api.getShortestPath("person_rajiv_malhotra", "org_dubai_express");
         if (pathRes && pathRes.node_ids) {
           setHighlightedPath(pathRes);
         }

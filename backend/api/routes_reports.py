@@ -24,7 +24,7 @@ def generate_report(investigation_id: str = "inv_default", case_id: str = "C104"
             citation_id="CIT-01",
             evidence_id="ev_fir_104_03",
             source_title="Special Cell FIR #104/2026",
-            claim="Vikram Singhania identified as principal organizer in domestic hawala network.",
+            claim="Rajiv Malhotra identified as principal organizer in domestic hawala network.",
             confidence=0.98,
             hash_signature="f3a19b2289c0..."
         ),
@@ -32,7 +32,7 @@ def generate_report(investigation_id: str = "inv_default", case_id: str = "C104"
             citation_id="CIT-02",
             evidence_id="ev_cdr_104_01",
             source_title="Telecom CDR Intercept Log #DL-CDR-2026-981",
-            claim="Direct 24-call communication link established between Vikram Singhania (+91 98110 99881) and Rajesh Kumar (+91 98200 44332).",
+            claim="Direct 24-call communication link established between Rajiv Malhotra (+91 98110 99881) and Rajesh Kumar (+91 98200 44332).",
             confidence=0.98,
             hash_signature="e4b0119a77c..."
         ),
@@ -61,7 +61,7 @@ def generate_report(investigation_id: str = "inv_default", case_id: str = "C104"
         investigation_id=investigation_id,
         case_id=case_id,
         title=f"Intelligence Dossier: Case {case_id} Link Analysis to Network N7",
-        executive_summary="Comprehensive graph intelligence analysis confirms direct financial layering and communication conduits linking Case C104 suspect Vikram Singhania to the Dubai-based Network N7 syndicate. The connection relies critically on intermediate bridge entity Rajesh Kumar (BlueStar Import Export), who acts as the primary domestic broker.",
+        executive_summary="Comprehensive graph intelligence analysis confirms direct financial layering and communication conduits linking Case C104 suspect Rajiv Malhotra to the Dubai-based Network N7 syndicate. The connection relies critically on intermediate bridge entity Rajesh Kumar (BlueStar Import Export), who acts as the primary domestic broker.",
         key_findings=[
             "Bridge Vulnerability Identified: Rajesh Kumar (Betweenness Centrality: 0.842) represents the sole operational bridge between domestic capital flight and Network N7 overseas accounts.",
             "Financial Velocity Anomaly: ₹3.20 Crores deposited into BlueStar ICICI was aggregated and remitted outward (₹4.80 Crores) to Dubai in less than 24 hours, displaying hallmark hawala structuring.",
@@ -69,7 +69,7 @@ def generate_report(investigation_id: str = "inv_default", case_id: str = "C104"
             "Overseas Node Hub: Gulf Oasis General Trading LLC (Tariq Sheikh) in Dubai identified as the recipient terminal node."
         ],
         suspect_profiles=[
-            {"name": "Vikram Singhania", "role": "Originator / Accused #1", "risk_score": 78.5, "jurisdiction": "New Delhi"},
+            {"name": "Rajiv Malhotra", "role": "Originator / Accused #1", "risk_score": 78.5, "jurisdiction": "New Delhi"},
             {"name": "Rajesh Kumar", "role": "Key Intermediary Broker / Bridge Node", "risk_score": 94.0, "jurisdiction": "Chandni Chowk, Delhi"},
             {"name": "Tariq Sheikh", "role": "Overseas Syndicate Controller (Network N7)", "risk_score": 96.5, "jurisdiction": "Dubai, UAE"}
         ],
@@ -77,7 +77,7 @@ def generate_report(investigation_id: str = "inv_default", case_id: str = "C104"
             {
                 "path_name": "Primary Laundering & Coordination Conduit",
                 "hops": 3,
-                "chain": ["Vikram Singhania (Person)", "Rajesh Kumar (Bridge)", "Tariq Sheikh (Syndicate Boss)"],
+                "chain": ["Rajiv Malhotra (Person)", "Rajesh Kumar (Bridge)", "Tariq Sheikh (Syndicate Boss)"],
                 "confidence": 0.96
             }
         ],
@@ -85,7 +85,7 @@ def generate_report(investigation_id: str = "inv_default", case_id: str = "C104"
             "total_flagged_inflow": "₹3,20,00,000 INR",
             "total_flagged_outflow": "₹4,80,00,000 INR",
             "layering_hops": 2,
-            "shell_entities_involved": ["Singhania Infra Projects Ltd", "BlueStar Import Export Pvt Ltd", "Gulf Oasis General Trading LLC"]
+            "shell_entities_involved": ["Malhotra Infra Projects Ltd", "BlueStar Import Export Pvt Ltd", "Gulf Oasis General Trading LLC"]
         },
         timeline_summary=[
             {"date": "2026-01-05", "event": "Special Cell Case FIR Registered"},

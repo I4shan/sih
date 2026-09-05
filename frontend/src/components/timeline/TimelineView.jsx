@@ -22,17 +22,17 @@ const EVENT_ICONS = {
 };
 
 const SEVERITY_COLORS = {
-  CRITICAL: 'bg-red-950/80 text-red-300 border-red-700 font-bold',
-  HIGH: 'bg-amber-950/80 text-amber-300 border-amber-700 font-bold',
-  MEDIUM: 'bg-blue-950/80 text-blue-300 border-blue-700 font-medium',
-  LOW: 'bg-slate-900 text-slate-400 border-slate-700 font-medium'
+  CRITICAL: 'bg-red-50 text-red-800 border-red-300 font-bold',
+  HIGH: 'bg-amber-50 text-amber-800 border-amber-300 font-bold',
+  MEDIUM: 'bg-sky-50 text-sky-800 border-sky-300 font-semibold',
+  LOW: 'bg-slate-50 text-slate-700 border-slate-300 font-medium'
 };
 
 const TYPE_BADGE_COLORS = {
-  FINANCIAL_TRANSACTION: 'text-amber-400 border-amber-800 bg-amber-950/40',
-  COMMUNICATION: 'text-emerald-400 border-emerald-800 bg-emerald-950/40',
-  PHYSICAL_SURVEILLANCE: 'text-rose-400 border-rose-800 bg-rose-950/40',
-  CASE_MILESTONE: 'text-cyan-400 border-cyan-800 bg-cyan-950/40'
+  FINANCIAL_TRANSACTION: 'text-amber-900 border-amber-300 bg-amber-50',
+  COMMUNICATION: 'text-emerald-900 border-emerald-300 bg-emerald-50',
+  PHYSICAL_SURVEILLANCE: 'text-rose-900 border-rose-300 bg-rose-50',
+  CASE_MILESTONE: 'text-sky-900 border-sky-300 bg-sky-50'
 };
 
 export default function TimelineView() {
@@ -59,31 +59,31 @@ export default function TimelineView() {
   const filteredEvents = filterType === 'ALL' ? events : events.filter(e => e.type === filterType);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Header & Filter Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-4 bg-white p-4 rounded-xl border border-sky-200 shadow-xs">
         <div>
-          <h2 className="text-xl font-extrabold text-white tracking-tight flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-cyan-950 text-cyan-400 border border-cyan-700 shadow-sm shadow-cyan-500/20">
+          <h2 className="text-lg font-bold text-[#003366] tracking-tight flex items-center gap-2.5">
+            <div className="p-2 rounded-lg bg-sky-50 text-sky-700 border border-sky-200 shadow-xs">
               <Clock className="w-5 h-5" />
             </div>
             <span>Chronological Investigation Timeline & Sequence</span>
           </h2>
-          <p className="text-xs text-slate-400 mt-1 pl-11">
+          <p className="text-xs text-slate-600 mt-1 pl-11">
             Multi-source temporal correlation linking CDR phone calls, physical surveillance intercepts, and rapid wire transactions.
           </p>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center gap-1.5 bg-slate-950/80 p-1.5 rounded-2xl border border-slate-800 text-xs">
+        <div className="flex flex-wrap items-center gap-1.5 bg-slate-100 p-1 rounded-lg border border-slate-300 text-xs">
           {['ALL', 'FINANCIAL_TRANSACTION', 'COMMUNICATION', 'PHYSICAL_SURVEILLANCE', 'CASE_MILESTONE'].map((type) => (
             <button
               key={type}
               onClick={() => setFilterType(type)}
-              className={`px-3 py-1.5 rounded-xl font-medium transition-all ${
+              className={`px-3 py-1 rounded-md font-medium transition-all ${
                 filterType === type
-                  ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 border border-cyan-500/50 shadow-sm'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+                  ? 'bg-sky-600 text-white shadow-xs'
+                  : 'text-slate-700 hover:text-sky-900 hover:bg-white'
               }`}
             >
               {type === 'ALL' ? 'All Events' : type.replace(/_/g, ' ')}
@@ -93,36 +93,36 @@ export default function TimelineView() {
       </div>
 
       {/* Timeline Stream */}
-      <div className="relative pl-6 sm:pl-8 border-l-2 border-slate-800/80 space-y-6 ml-3">
+      <div className="relative pl-6 sm:pl-8 border-l-2 border-sky-200 space-y-5 ml-3">
         {filteredEvents.map((evt) => {
           const IconComp = EVENT_ICONS[evt.type] || Clock;
           const dateStr = new Date(evt.timestamp).toLocaleString();
-          const typeBadgeStyle = TYPE_BADGE_COLORS[evt.type] || 'text-cyan-400 border-cyan-800 bg-cyan-950/40';
+          const typeBadgeStyle = TYPE_BADGE_COLORS[evt.type] || 'text-sky-900 border-sky-300 bg-sky-50';
 
           return (
             <div key={evt.id} className="relative group">
-              {/* Glowing Timeline Dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-4 w-4 h-4 rounded-full bg-slate-950 border-2 border-cyan-400 group-hover:bg-cyan-400 group-hover:shadow-lg group-hover:shadow-cyan-400/50 transition-all duration-300" />
+              {/* Timeline Dot */}
+              <div className="absolute -left-[31px] sm:-left-[39px] top-4 w-4 h-4 rounded-full bg-white border-2 border-sky-600 shadow-xs transition-all duration-300" />
 
               {/* Event Card */}
-              <div className="p-5 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/50 transition-all space-y-3 shadow-xl">
+              <div className="p-4 rounded-xl bg-white border border-slate-300 hover:border-sky-400 transition-all space-y-2.5 shadow-xs">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className={`px-2.5 py-0.5 rounded-lg text-[10px] font-mono border ${typeBadgeStyle}`}>
+                    <span className={`px-2.5 py-0.5 rounded text-[10px] font-bold border ${typeBadgeStyle}`}>
                       {evt.type.replace(/_/g, ' ')}
                     </span>
-                    <span className={`px-2.5 py-0.5 rounded-lg text-[10px] font-mono border ${SEVERITY_COLORS[evt.severity]}`}>
+                    <span className={`px-2.5 py-0.5 rounded text-[10px] border ${SEVERITY_COLORS[evt.severity]}`}>
                       {evt.severity}
                     </span>
-                    <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5 bg-slate-950 px-2.5 py-0.5 rounded-lg border border-slate-800">
-                      <Calendar className="w-3.5 h-3.5 text-cyan-400" /> {dateStr}
+                    <span className="text-xs text-slate-700 flex items-center gap-1.5 bg-slate-50 px-2.5 py-0.5 rounded border border-slate-200 font-medium">
+                      <Calendar className="w-3.5 h-3.5 text-sky-600" /> {dateStr}
                     </span>
                   </div>
 
                   {evt.evidence_id && (
                     <button
                       onClick={() => inspectEvidence(evt.evidence_id)}
-                      className="px-3 py-1 rounded-xl bg-cyan-950/80 hover:bg-cyan-900 text-cyan-300 text-xs font-mono border border-cyan-700/80 flex items-center gap-1.5 transition shadow-sm"
+                      className="px-2.5 py-1 rounded bg-sky-50 hover:bg-sky-100 text-sky-800 text-xs border border-sky-300 flex items-center gap-1.5 font-medium transition shadow-xs"
                     >
                       <FileText className="w-3.5 h-3.5" />
                       <span>Inspect Evidence ({evt.evidence_id})</span>
@@ -130,28 +130,28 @@ export default function TimelineView() {
                   )}
                 </div>
 
-                <h3 className="text-base font-bold text-white flex items-center gap-2.5 tracking-tight">
-                  <div className="p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400">
+                <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <div className="p-1 rounded bg-sky-50 border border-sky-200 text-sky-700">
                     <IconComp className="w-4 h-4" />
                   </div>
                   <span>{evt.title}</span>
                 </h3>
 
-                <p className="text-xs text-slate-300 leading-relaxed font-sans bg-slate-950/40 p-3 rounded-xl border border-slate-800/60">
+                <p className="text-xs text-slate-700 leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-200">
                   {evt.description}
                 </p>
 
                 {/* Linked Subjects */}
                 {evt.entities && evt.entities.length > 0 && (
-                  <div className="pt-2 flex flex-wrap items-center gap-1.5 border-t border-slate-800/80">
-                    <span className="text-[10px] text-slate-400 uppercase font-mono font-bold mr-1">
+                  <div className="pt-2 flex flex-wrap items-center gap-1.5 border-t border-slate-200">
+                    <span className="text-[10px] text-slate-600 uppercase font-bold mr-1">
                       Linked Subjects:
                     </span>
                     {evt.entities.map((entId) => (
                       <span
                         key={entId}
                         onClick={() => selectEntityById(entId)}
-                        className="px-2.5 py-1 bg-slate-900 hover:bg-slate-800 text-cyan-300 text-[11px] rounded-lg cursor-pointer border border-slate-800 font-mono transition hover:border-cyan-500/50"
+                        className="px-2 py-0.5 bg-white hover:bg-sky-50 text-sky-900 text-[11px] rounded cursor-pointer border border-sky-200 font-mono transition"
                       >
                         {entId}
                       </span>
